@@ -7,9 +7,22 @@ on:
         - master
         - test
 
+
+    pull_request:
+        branches:
+            - master
+
+
 jobs: 
     on-push:
         runs-on: ubuntu-latest
         steps:
-            - name: "Running on master push"
-              run: echo "Running on master push"
+            - name: "Running on master/test push"
+              run: echo "Running on master/test push"
+
+
+    on-pull-request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Running on pull request"
+              run: echo "running on pull request"
