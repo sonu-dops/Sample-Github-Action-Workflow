@@ -35,6 +35,14 @@ jobs:
             - name: "Running on pull request"
               run: echo "running on pull request"
 
+
+    on-pull-request-opend:
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Running on pull request opened"
+              run: echo "Running on pull request opened"
+
     
     on-pull-request-closed:
         if: github.event_name == 'pull_request' && github.event.action == 'closed'
